@@ -5,21 +5,28 @@ pipeline {
     }
 
     stages {
+        stage('setup') {
+            agent { label 'docker' }
+            steps {
+                sh 'echo " hii i am docker setup stage"  '
+                sh 'yum install git -y '
+                sh 'yum install httpd -y '
+                sh 'touch /home/test '
+                sh '/usr/sbin/httpd  &> /home/test '
+                sh 'cp index.html /var/www/html '
+                sh 'curl 127.0.0.1 '
+            }
+        }
         stage('configure') {
             steps {
                 echo " hii i am configure stage"
+                sh 'curl 192.168.1.7 '
                 // sudo setenforce 0
                 // sudo systemctl stop firewalld
                 // sudo yum install httpd -y
             }
         }
-        stage('setup') {
-            agent { label 'docker' }
-            steps {
-                // cp .
-                 echo " hii i am docker setup stage"
-            }
-        }
+        
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
