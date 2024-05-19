@@ -14,7 +14,7 @@ pipeline {
             }
         }
         stage('setup') {
-            agent { label 'dcoker' }
+            agent { label 'docker' }
             steps {
                 // cp .
                  echo " hii i am setup stage"
