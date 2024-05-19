@@ -27,6 +27,8 @@ pipeline {
         stage('configure') {
             steps {
                 echo " hii i am configure stage"
+                sh 'sleep 20 '
+
                 sh 'watch -n 1 "curl 192.168.1.7" '
                 // sudo setenforce 0
                 // sudo systemctl stop firewalld
