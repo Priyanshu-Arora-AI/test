@@ -13,8 +13,6 @@ pipeline {
             agent { label 'docker' }
             steps {
                 sh 'echo " hii i am docker setup stage"  '
-                sh 'yum install git -y '
-                sh 'yum install httpd -y '
                 sh 'touch /home/test '
                 sh '/usr/sbin/httpd  &> /home/test '
                 sh 'cp index.html /var/www/html '
