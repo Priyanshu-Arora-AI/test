@@ -1,0 +1,25 @@
+
+pipeline {
+    agent slave-1
+
+    stages {
+        stage('configure') {
+            steps {
+                echo " hii i am configure stage"
+                // sudo setenforce 0
+                // sudo systemctl stop firewalld
+                // sudo yum install httpd -y
+            }
+        }
+        stage('setup') {
+            steps {
+                // cp .
+                 echo " hii i am setup stage"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
