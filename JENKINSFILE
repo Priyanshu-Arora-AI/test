@@ -1,6 +1,6 @@
 
 pipeline {
-    agent slave-1
+    agent slave
 
     stages {
         stage('configure') {
