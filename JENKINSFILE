@@ -23,6 +23,9 @@ pipeline {
         }
         
         stage('configure') {
+             agent {
+        label 'slave'
+                }
             steps {
                 echo " hii i am configure stage"
                 sh 'sleep 120 '
