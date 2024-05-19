@@ -5,6 +5,10 @@ pipeline {
     }
 
     stages {
+
+        stage('Parallel Setup and Configure') 
+    {
+            parallel {
         stage('setup') {
             agent { label 'docker' }
             steps {
@@ -19,6 +23,7 @@ pipeline {
 
             }
         }
+        
         stage('configure') {
             steps {
                 echo " hii i am configure stage"
@@ -28,6 +33,9 @@ pipeline {
                 // sudo yum install httpd -y
             }
         }
+            
+    }
+    }
         
         stage('Deploy') {
             steps {
