@@ -6,9 +6,9 @@ pipeline {
 
     stages {
 
-        stage('Parallel Setup and Configure') 
-    {
-            parallel {
+    //     stage('Parallel Setup and Configure') 
+    // {
+    //         parallel {
         stage('setup') {
             agent { label 'docker' }
             steps {
@@ -34,8 +34,8 @@ pipeline {
             }
         }
             
-    }
-    }
+    // }
+    // }
         
         stage('Deploy') {
             steps {
