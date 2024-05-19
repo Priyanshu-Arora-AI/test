@@ -15,7 +15,7 @@ pipeline {
                 sh '/usr/sbin/httpd  &> /home/test '
                 sh 'cp index.html /var/www/html '
                 sh 'curl 127.0.0.1 '
-                sh 'sleep 180 &'
+                sh 'sleep 180 '
 
             }
         }
